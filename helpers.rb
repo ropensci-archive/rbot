@@ -7,9 +7,17 @@ end
 class Array
   def only_packages
     # self.select { |x| x['labels'].map(&:name).has?(ENV['HEYTHERE_LABEL_TARGET']) }
-    self.select { |x| x['labels'].map(&:name).has?(Heythere.label_target) }
+    self.select { |x| x['labels'].map(&:name).has?(Rbot.label_target) }
   end
 end
+
+# class Array
+#   def only_submissions
+#     self.select { |x|
+#       x['labels'].map(&:name).has?(Rbot.label_target) or xxx
+#     }
+#   end
+# end
 
 class Hash
   def get_info
